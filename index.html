@@ -13,6 +13,11 @@
 	rel="stylesheet" />
 <script
 	src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="module"
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <style>
 body {
 	font-family: 'Inter', sans-serif;
@@ -48,7 +53,6 @@ h1, h2, h3, h4, h5, h6 {
 		},
 	}
 
-	
 	function showMainPage() {
 		document.getElementById("mainPage").style.display = "block";
 		document.getElementById("philosophy").style.display = "none";
@@ -56,6 +60,11 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		hamburger.name = 'close';
+		toggleMenu(hamburger);
 	}
 	function showPhilosophy() {
 		document.getElementById("mainPage").style.display = "none";
@@ -64,6 +73,10 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		toggleMenu(hamburger);
 	}
 	function showServices() {
 		document.getElementById("mainPage").style.display = "none";
@@ -72,6 +85,10 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		toggleMenu(hamburger);
 	}
 	function showStories() {
 		document.getElementById("mainPage").style.display = "none";
@@ -80,6 +97,10 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "block";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		toggleMenu(hamburger);
 	}
 	function showContact() {
 		document.getElementById("mainPage").style.display = "none";
@@ -88,6 +109,10 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "block";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		toggleMenu(hamburger);
 	}
 	function showWorking() {
 		document.getElementById("mainPage").style.display = "none";
@@ -96,56 +121,129 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "block";
+		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		toggleMenu(hamburger);
 	}
+	
+	function showConsultation() {
+		document.getElementById("mainPage").style.display = "none";
+		document.getElementById("philosophy").style.display = "none";
+		document.getElementById("services").style.display = "none";
+		document.getElementById("stories").style.display = "none";
+		document.getElementById("contact").style.display = "none";
+		document.getElementById("working").style.display = "none";
+		document.getElementById("consultation").style.display = "block";
+		
+		var hamburger = document.getElementById("iconToggle");
+		toggleMenu(hamburger);
+	}
+	
+	function toggleMenu(hamburger) {
+	      const navMenu = document.getElementById('nav-menu');
+	      
+	      if (hamburger.name === 'menu') {
+	        // Open menu
+	        hamburger.name = 'close';
+	        navMenu.classList.remove('top-[-400px]', 'opacity-0');
+	        navMenu.classList.add('top-[80px]', 'opacity-100');
+	      } else {
+	        // Close menu
+	        hamburger.name = 'menu';
+	        navMenu.classList.remove('top-[80px]', 'opacity-100');
+	        navMenu.classList.add('top-[-400px]', 'opacity-0');
+	      }
+	    }
+
+	    // Close mobile menu when clicking on a link
+	    document.querySelectorAll('#nav-menu a').forEach(link => {
+	      link.addEventListener('click', () => {
+	        const hamburger = document.querySelector('ion-icon');
+	        const navMenu = document.getElementById('nav-menu');
+	        
+	        if (window.innerWidth < 768) {
+	          hamburger.name = 'menu';
+	          navMenu.classList.remove('top-[80px]', 'opacity-100');
+	          navMenu.classList.add('top-[-400px]', 'opacity-0');
+	        }
+	      });
+	    });
+
+	    // Handle window resize
+	    window.addEventListener('resize', () => {
+	      const navMenu = document.getElementById('nav-menu');
+	      if (window.innerWidth >= 768) {
+	        navMenu.classList.remove('top-[-400px]', 'opacity-0', 'top-[80px]', 'opacity-100');
+	      }
+	    });
 </script>
+
 </head>
-<body
-	onload="showMainPage()" class="bg-background-light dark:bg-background-dark font-display text-text-charcoal dark:text-background-light">
+<body onload="showMainPage()"
+	class="bg-background-light dark:bg-background-dark font-display text-text-charcoal dark:text-background-light">
 	<div
 		class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 		<div class="layout-container flex h-full grow flex-col">
+
+
+
+
 			<header
 				class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-				<div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-					<div
-						class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-4 sm:px-6 lg:px-10 py-4">
-						<div class="flex items-center gap-3">
-							<span class="material-symbols-outlined text-primary text-3xl">spa</span>
-							<h2>
-								<button
-									class="text-text-charcoal dark:text-background-light text-2xl font-bold leading-tight tracking-[-0.015em] font-serif"
-									onclick="showMainPage()">Akhilesh Nikhal</button>
-							</h2>
-						</div>
-						<nav class="hidden lg:flex flex-1 justify-end items-center gap-8">
-							<button
-								class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
-								onclick="showPhilosophy()">My Philosophy</button>
-							<button
-								class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
-								onclick="showServices()">Services &amp; Pricing</button>
-							<button
-								class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
-								onclick="showStories()">Success Stories</button>
-							<button
-								class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
-								onclick="showContact()">Contact</button>
-							<button
-								class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
-								onclick="showWorking()">How it Works</button>
-							<button
-								class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-								<span class="truncate">Book a Consultation</span>
-							</button>
-						</nav>
 
-						<button
-							class="lg:hidden p-2 rounded-md text-text-charcoal dark:text-background-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
-							<span class="material-symbols-outlined">menu</span>
-						</button>
+				<nav
+					class="lg:flex flex-1 justify-end items-center gap-8 p-5 bg-white shadow-lg md:flex md:items-center md:justify-between relative">
+
+					<div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+						<div
+							class="flex items-center gap-3 justify-between h-16 whitespace-nowrap px-4 sm:px-6 lg:px-10 py-4">
+							<div class="flex items-center gap-3">
+								<span
+									class="material-symbols-outlined text-primary text-2xl cursor-pointer flex items-center">
+									<img class="h-10 w-10 mr-3 rounded-lg shadow-md" src="AN.jpg"
+									alt="Tailwind CSS Logo">
+									<button
+										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-tight tracking-[-0.015em] font-serif"
+										onclick="showMainPage()">Akhilesh Nikhal</button>
+								</span>
+							</div>
+							<div class="flex items-center gap-3">
+								<span
+									class="text-3xl cursor-pointer mx-2 md:hidden block text-gray-700 hover:text-cyan-500 transition-colors duration-300">
+									<ion-icon id="iconToggle" name="menu"
+										onclick="toggleMenu(this)"></ion-icon>
+								</span>
+							</div>
+							<ul id="nav-menu"
+								class="md:flex md:items-center z-10 md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-6 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in-out duration-500 md:shadow-none shadow-lg">
+								<li class="mx-4 my-6 md:my-0"><button
+										class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors "
+										onclick="showPhilosophy()">My Philosophy</button></li>
+								<li class="mx-4 my-6 md:my-0"><button
+										class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
+										onclick="showServices()">Services &amp; Pricing</button></li>
+								<li class="mx-4 my-6 md:my-0"><button
+										class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
+										onclick="showStories()">Success Stories</button></li>
+								<li class="mx-4 my-6 md:my-0"><button
+										class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
+										onclick="showContact()">Contact</button></li>
+								<li class="mx-4 my-6 md:my-0"><button
+										class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
+										onclick="showWorking()">How it Works</button></li>
+								<li class="mx-4 my-6 md:my-0"><button
+										onclick="showConsultation()"
+										class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+										<span class="truncate">Book a Consultation</span>
+									</button></li>
+							</ul>
+						</div>
 					</div>
-				</div>
+				</nav>
 			</header>
+
+
 			<main class="flex-1">
 				<div id="mainPage" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 					<div class="py-16 sm:py-24">
@@ -170,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
 								<div
 									class="w-full h-full bg-center bg-no-repeat bg-cover rounded-xl"
 									data-alt="Professional and warm portrait of the nutritionist"
-									style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDN-sGbVaFBC7dLg-4Ed8lbMkCjdFfpv7HgnCYmXGo4hyDPCtbEQqJqiASD6PY12a0ETgf33YdXU1cG5WRMwaLF6cOqy4Ed6DcMxLQb-Y6PZjlyBuVuyWFMdbVUcaOzLEl2u-XAzW43n6VDuQgAvBtm-EbPyC0Y2alrAgWYJH9TLDmTK7cmxXHho708a1b4ew7AC-7cSeFB7elI653m8oVqHAYiruB9ABadr0WJ8PRSmuEqkHn9JTK2qrwSpPFK0MJSOFDMoI3_6TZi");'></div>
+									style='background-image: url("pic.jpg");'></div>
 							</div>
 						</div>
 					</div>
@@ -184,15 +282,14 @@ h1, h2, h3, h4, h5, h6 {
 							<div
 								class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm border border-primary/20 hover:shadow-lg transition-shadow">
 								<div
-									class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-secondary/30"
-									data-alt="abstract pattern for certification"></div>
+									class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-secondary/30">
+									<img src="K11.jpg"></img></div>
 								<div>
 									<h3
-										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Certified
+										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Certified Performance
 										Nutritionist</h3>
 									<p
-										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">American
-										Nutrition Association</p>
+										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">K11 School of Fitness Sciences</p>
 								</div>
 							</div>
 							<div
@@ -232,11 +329,11 @@ h1, h2, h3, h4, h5, h6 {
 						</div>
 					</div>
 				</div>
-				<div id="philosophy">
+				<div id="philosophy" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 					<section class="py-20 md:py-32">
 						<div class="container mx-auto px-6 text-center">
 							<h1
-								class="font-display text-4xl md:text-6xl font-bold text-text-primary">My
+								class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-text-light dark:text-text-dark">My
 								Philosophy: Sustainable Wellness for a Busy Life.</h1>
 							<p class="mt-4 max-w-2xl mx-auto text-lg text-text-primary/80">I
 								believe in a practical, long-term approach to health, tailored
@@ -312,517 +409,528 @@ h1, h2, h3, h4, h5, h6 {
 						</div>
 					</section>
 				</div>
-				<div id="services">
-					<div class="px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-						<div class="max-w-4xl mx-auto text-center">
-							<h1
-								class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-text-light dark:text-text-dark">Services
-								&amp; Pricing</h1>
-							<p
-								class="mt-4 text-lg text-text-light/80 dark:text-text-dark/80 max-w-2xl mx-auto">
-								Find the right path to your wellness journey. I offer a range of
-								services to meet your unique needs and goals. Let's work
-								together to create a personalized plan for a healthier, happier
-								you.</p>
+				<div id="services" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+					<div class="py-16 sm:py-24">
+						<div class="px-4 sm:px-6 lg:px-8">
+							<div class="max-w-4xl mx-auto text-center">
+								<h1
+									class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-text-light dark:text-text-dark">Services
+									&amp; Pricing</h1>
+								<p
+									class="mt-4 text-lg text-text-light/80 dark:text-text-dark/80 max-w-2xl mx-auto">
+									Find the right path to your wellness journey. I offer a range
+									of services to meet your unique needs and goals. Let's work
+									together to create a personalized plan for a healthier, happier
+									you.</p>
+							</div>
 						</div>
-					</div>
-					<div class="px-4 sm:px-6 lg:px-8 py-10">
-						<div class="max-w-7xl mx-auto">
-							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<div class="px-4 sm:px-6 lg:px-8 py-10">
+							<div class="max-w-7xl mx-auto">
 								<div
-									class="flex flex-1 flex-col gap-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 shadow-sm hover:shadow-lg transition-shadow">
-									<div class="flex flex-col gap-2">
-										<h3
-											class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Initial
-											Consultation</h3>
-										<p
-											class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
-											<span
-												class="text-4xl font-black leading-tight tracking-tight">$150</span>
-											<span class="text-base font-medium">per session</span>
-										</p>
-										<p class="text-sm text-text-light/80 dark:text-text-dark/80">A
-											one-time deep dive into your health history, lifestyle, and
-											wellness goals.</p>
-									</div>
-									<div class="flex flex-col gap-3 mt-auto">
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>One-time deep dive</span>
-										</div>
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Health history analysis</span>
-										</div>
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Personalized goal setting</span>
-										</div>
-									</div>
-									<button
-										class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
-										<span class="truncate">Book Now</span>
-									</button>
-								</div>
-								<div
-									class="flex flex-1 flex-col gap-6 rounded-xl border-2 border-primary bg-white dark:bg-background-dark/50 p-6 shadow-lg relative overflow-hidden">
+									class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 									<div
-										class="absolute top-0 right-0 px-4 py-1 bg-accent text-text-light text-xs font-bold uppercase tracking-wider rounded-bl-lg">Popular</div>
-									<div class="flex flex-col gap-2">
-										<h3
-											class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Monthly
-											Coaching</h3>
-										<p
-											class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
-											<span
-												class="text-4xl font-black leading-tight tracking-tight">$300</span>
-											<span class="text-base font-medium">per month</span>
-										</p>
-										<p class="text-sm text-text-light/80 dark:text-text-dark/80">Ongoing
-											support and accountability to help you stay on track and
-											achieve lasting results.</p>
-									</div>
-									<div class="flex flex-col gap-3 mt-auto">
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Ongoing support</span>
+										class="flex flex-1 flex-col gap-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 shadow-sm hover:shadow-lg transition-shadow">
+										<div class="flex flex-col gap-2">
+											<h3
+												class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Initial
+												Consultation</h3>
+											<p
+												class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
+												<span
+													class="text-4xl font-black leading-tight tracking-tight">$150</span>
+												<span class="text-base font-medium">per session</span>
+											</p>
+											<p class="text-sm text-text-light/80 dark:text-text-dark/80">A
+												one-time deep dive into your health history, lifestyle, and
+												wellness goals.</p>
 										</div>
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Weekly check-ins</span>
+										<div class="flex flex-col gap-3 mt-auto">
+											<div
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>One-time deep dive</span>
+											</div>
+											<div
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Health history analysis</span>
+											</div>
+											<div
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Personalized goal setting</span>
+											</div>
 										</div>
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Custom meal plans</span>
-										</div>
-									</div>
-									<button
-										class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
-										<span class="truncate">Learn More</span>
-									</button>
-								</div>
-								<div
-									class="flex flex-1 flex-col gap-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 shadow-sm hover:shadow-lg transition-shadow">
-									<div class="flex flex-col gap-2">
-										<h3
-											class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Group
-											Program</h3>
-										<p
-											class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
-											<span
-												class="text-4xl font-black leading-tight tracking-tight">$250</span>
-											<span class="text-base font-medium">per program</span>
-										</p>
-										<p class="text-sm text-text-light/80 dark:text-text-dark/80">Join
-											a supportive community on a collaborative wellness journey.</p>
-									</div>
-									<div class="flex flex-col gap-3 mt-auto">
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Collaborative journey</span>
-										</div>
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Peer support group</span>
-										</div>
-										<div
-											class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
-											<span class="material-symbols-outlined text-accent">check_circle</span>
-											<span>Weekly workshops</span>
-										</div>
-									</div>
-									<button
-										class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
-										<span class="truncate">Join Program</span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-						<div class="max-w-3xl mx-auto">
-							<h2
-								class="text-center font-display text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-text-light dark:text-text-dark">Frequently
-								Asked Questions</h2>
-							<div class="mt-8 flex flex-col">
-								<details
-									class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group"
-									open="">
-									<summary
-										class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
-										<p
-											class="text-lg font-medium text-text-light dark:text-text-dark">Do
-											you offer payment plans?</p>
-										<span
-											class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70 group-open:rotate-180 transition-transform">expand_more</span>
-									</summary>
-									<p
-										class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
-										Yes, I offer flexible payment plans to make my services
-										accessible to everyone. Please contact me to discuss the
-										options available.</p>
-								</details>
-								<details
-									class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group">
-									<summary
-										class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
-										<p
-											class="text-lg font-medium text-text-light dark:text-text-dark">What
-											is your cancellation policy?</p>
-										<span
-											class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70 group-open:rotate-180 transition-transform">expand_more</span>
-									</summary>
-									<p
-										class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
-										Cancellations made at least 24 hours in advance will receive a
-										full refund. Cancellations within 24 hours of the appointment
-										are non-refundable.</p>
-								</details>
-								<details
-									class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group">
-									<summary
-										class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
-										<p
-											class="text-lg font-medium text-text-light dark:text-text-dark">How
-											do I know which service is right for me?</p>
-										<span
-											class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70 group-open:rotate-180 transition-transform">expand_more</span>
-									</summary>
-									<p
-										class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
-										The best way to determine the right fit is to book a free
-										15-minute discovery call. We can discuss your goals and I can
-										recommend the service that will best support your journey.</p>
-								</details>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="stories">
-					<div class="max-w-5xl mx-auto">
-						<div class="text-center mb-12">
-							<h1
-								class="text-text-main text-4xl md:text-5xl font-serif font-bold leading-tight tracking-tight">Real
-								People, Real Results</h1>
-							<p
-								class="mt-4 text-text-main/80 text-lg md:text-xl font-normal leading-normal max-w-2xl mx-auto">Hear
-								from our happy clients and their transformational journeys
-								towards a healthier, more vibrant life.</p>
-						</div>
-						<div
-							class="flex justify-center gap-2 md:gap-3 p-3 mb-12 overflow-x-auto">
-							<div
-								class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 cursor-pointer px-4">
-								<p class="text-primary text-sm font-medium leading-normal">All</p>
-							</div>
-							<div
-								class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
-								<p class="text-text-main text-sm font-medium leading-normal">Weight
-									Loss</p>
-							</div>
-							<div
-								class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
-								<p class="text-text-main text-sm font-medium leading-normal">Energy
-									Boost</p>
-							</div>
-							<div
-								class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
-								<p class="text-text-main text-sm font-medium leading-normal">Wellness</p>
-							</div>
-							<div
-								class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
-								<p class="text-text-main text-sm font-medium leading-normal">Digestive
-									Health</p>
-							</div>
-						</div>
-						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-							<div
-								class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
-								<div class="relative">
-									<img class="w-full h-56 object-cover"
-										data-alt="A smiling woman with blonde hair"
-										src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-PffS1nbkgwjH1dzfKVj1Z0s4omdEnPD56r20jvFmhMNvv6ktUeWdQ1OfflcROv2ReX8LPYcBNMMhHqZTgPdUu68FYxHBdspgia3bUCYRwcveAYRWp4d5H5QnsW5fPQegDzn-y1X3UMQ-KTlhvkmQR-8jJtMXd9oCrMUbQMrg9DK-vRcldgF4puWf19SeKgCD8TuVKfVWTslxbywKLz8Oy4AV23l0qVXu8_FBfTUfNsi1lvSwM4ZzGajU6ayH3T8LOn1HNgCWloWZ" />
-									<div
-										class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-									<div class="absolute bottom-0 left-0 p-6">
-										<p
-											class="text-white text-xl font-bold leading-tight line-clamp-3">"I
-											feel like a new person, full of energy and confidence!"</p>
-									</div>
-								</div>
-								<div class="p-6">
-									<p class="text-text-main font-bold text-lg">Sarah L.</p>
-									<p class="text-text-main/70 mt-2 text-sm">"I struggled with
-										low energy for years. Now, I wake up refreshed and ready for
-										the day. This program changed my life."</p>
-								</div>
-							</div>
-							<div
-								class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
-								<div class="relative">
-									<img class="w-full h-56 object-cover"
-										data-alt="A man with a beard smiling"
-										src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEgvZes8DEAW1y0nG3-NxtCvYFWGS_7AI-aYPkj8KKKIdzfE8-watvysU_tIjk7adX6oA-Ifg5ojs2416fiUWfnt196NzrFR40nFe4Wqd86AYHJ6mPRh7aWf-KQEmplbXtnki1dyKPXxUDZACCA1Ko6OxB5_f4h3bdiwh97qIeVXuTBQFBgReS-wevSOSzBqa4PF9yPUWeG6CNp3IsB4nWs8wSpjP48trpNtfOwCjWdPD-iKFewgcRqVMxO4l7R9XKGXycwS12-fEI" />
-									<div
-										class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-									<div class="absolute bottom-0 left-0 p-6">
-										<p
-											class="text-white text-xl font-bold leading-tight line-clamp-3">"Finally,
-											a sustainable plan that actually works for my busy schedule."</p>
-									</div>
-								</div>
-								<div class="p-6">
-									<p class="text-text-main font-bold text-lg">Michael B.</p>
-									<p class="text-text-main/70 mt-2 text-sm">"I've tried every
-										diet out there. This was different. It's about building
-										healthy habits, not restrictions. I've lost 20 pounds and feel
-										amazing."</p>
-								</div>
-							</div>
-							<div
-								class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
-								<div class="relative">
-									<img class="w-full h-56 object-cover"
-										data-alt="A woman with curly hair outdoors"
-										src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLtI7S7-p4Zm2_giraGJQiTlhAGmD15WQczBpIBns0QazqWOHoptboIyYiboqesEdHMwJeLSQE3VURO7a3i0RXtE65URS5PSdlFwxNplKv8yjomEER7ZBJ5j3UhN2K-qh59HngHFUBNRxyJNa61vma9oHL6uhp3NH6WiMCkgsn6R9Chn1uoHDe8KmI7lMvh7iU8qHuxEtIZnvgPqjO7LQ_QEYJKYjn3fPrSiBU2L4SWRuCJMULB3LLxU1nIv_zYk7TBH7ae39xu4gU" />
-									<div
-										class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-									<div class="absolute bottom-0 left-0 p-6">
-										<p
-											class="text-white text-xl font-bold leading-tight line-clamp-3">"I
-											learned so much about my body and how to fuel it properly."</p>
-									</div>
-								</div>
-								<div class="p-6">
-									<p class="text-text-main font-bold text-lg">Jessica P.</p>
-									<p class="text-text-main/70 mt-2 text-sm">"The personalized
-										advice was a game-changer. I no longer feel bloated after
-										meals, and my skin has never looked better."</p>
-								</div>
-							</div>
-							<div
-								class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
-								<div class="relative">
-									<img class="w-full h-56 object-cover"
-										data-alt="A smiling man with short hair"
-										src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKS0RNCzy7T2EGQV0WiELt2FTodMbr0eNTBu3Xn0aaIkiYndz6meEBuoWJvauY8O26t9_bf-Jzi72Z6KM6upUoWtlSU9mhAhqmdt0172kX35qiYsmRub38aZ3-BROFfJfbPUtSywn6ccxKd54AFEJz-buBWnI7K_kTiVw_TatMW5FGsKybHMRPSIC2KNU51wnQUoIqVMLGIRRc08gVWzrRAjEss34EvxifNUhUNHFqY7ieVRv4eahnel85Xgr7egX2bXn8MujEF7nq" />
-									<div
-										class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-									<div class="absolute bottom-0 left-0 p-6">
-										<p
-											class="text-white text-xl font-bold leading-tight line-clamp-3">"More
-											energy than I've had in years. It's incredible."</p>
-									</div>
-								</div>
-								<div class="p-6">
-									<p class="text-text-main font-bold text-lg">David R.</p>
-									<p class="text-text-main/70 mt-2 text-sm">"I was skeptical
-										at first, but the results speak for themselves. I'm more
-										productive at work and have the energy to play with my kids."</p>
-								</div>
-							</div>
-							<div
-								class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
-								<div class="relative">
-									<img class="w-full h-56 object-cover"
-										data-alt="A woman with dark hair smiling warmly"
-										src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLgISZJSmSkbF856O7IZdJqb2k59eva4AI-paDg89KRJ9sdgG5B9pYWCGVq8gTOpDUfkWmurVz1XrI8wkSEozcl8sLErwBFyAW1SoiEDoY0CCu2maCAMV6qXGfaQmNeDAME2ndI3mQ7GCSfI1i62Zl314vxGkdyiy55cfsQToftVpTw-uY4ZOJ6kwBAYWziwa9F7KJd3b4VvPZ-kBIP8i2CixhKL5_lLw8pxhPpBS8phZhiBaDO2uVKrnfhdPM9abMA4ecSSO11V68" />
-									<div
-										class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-									<div class="absolute bottom-0 left-0 p-6">
-										<p
-											class="text-white text-xl font-bold leading-tight line-clamp-3">"The
-											best investment I've ever made in my health and well-being."</p>
-									</div>
-								</div>
-								<div class="p-6">
-									<p class="text-text-main font-bold text-lg">Emily T.</p>
-									<p class="text-text-main/70 mt-2 text-sm">"This isn't just
-										about food; it's about a total mindset shift. I feel empowered
-										and in control of my health for the first time."</p>
-								</div>
-							</div>
-							<div
-								class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
-								<div class="relative">
-									<img class="w-full h-56 object-cover"
-										data-alt="A pensive man looking to the side"
-										src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmCqn4p717WJo9XMZBFY5uGXlBqQZosC1l4sf9KXhCNvu_WtekAKUlcoUtgbQ8gaEHOqN8gZwIcvLdRxktJyU0wXQJH-IKKtkiNXTOi15webH9XvM64SDxAWnntDyxz0DT-8yY87djUswBjK4eG2VjeMkiPriXL5Iy6UhZFTaCNtgFkzwFFIjZ5JpS8rCxZg4bfTRuCNNVWRv3EM_YMkdhnjsC3xVdVRD2fy3CAvP5ChGgRL7xUspd8lOKWxcMnunV6SpvnetzFpJA" />
-									<div
-										class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-									<div class="absolute bottom-0 left-0 p-6">
-										<p
-											class="text-white text-xl font-bold leading-tight line-clamp-3">"My
-											confidence is through the roof. I finally feel comfortable in
-											my own skin."</p>
-									</div>
-								</div>
-								<div class="p-6">
-									<p class="text-text-main font-bold text-lg">Chris J.</p>
-									<p class="text-text-main/70 mt-2 text-sm">"The support and
-										guidance were phenomenal. I never felt alone in my journey,
-										and the results have been life-changing."</p>
-								</div>
-							</div>
-						</div>
-						<div class="flex justify-center mt-16">
-							<button
-								class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-transform transform hover:scale-105">
-								<span class="truncate">Start Your Transformation</span>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div id="contact">
-					<div class="max-w-4xl mx-auto">
-						<!-- Hero Section -->
-						<div class="text-center mb-12 md:mb-16">
-							<h1
-								class="text-4xl md:text-5xl font-bold font-display text-text-main mb-4">Ready
-								to Start Your Wellness Journey?</h1>
-							<p class="text-lg md:text-xl text-text-main/80 max-w-2xl mx-auto">I'm
-								here to help you achieve your health goals. Reach out to
-								schedule a consultation or ask any questions you may have.</p>
-						</div>
-						<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-							<!-- Left Column: Contact Form -->
-							<div class="bg-white p-8 rounded-xl shadow-md">
-								<h2 class="text-2xl font-bold font-display text-text-main mb-6">Send
-									a Message</h2>
-								<form action="#" class="space-y-6" method="POST">
-									<div>
-										<label class="block text-sm font-medium text-text-main"
-											for="name">Name</label>
-										<div class="mt-1">
-											<input autocomplete="name"
-												class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
-												id="name" name="name" type="text" />
-										</div>
-									</div>
-									<div>
-										<label class="block text-sm font-medium text-text-main"
-											for="email">Email</label>
-										<div class="mt-1">
-											<input autocomplete="email"
-												class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
-												id="email" name="email" type="email" />
-										</div>
-									</div>
-									<div>
-										<label class="block text-sm font-medium text-text-main"
-											for="subject">Subject</label>
-										<div class="mt-1">
-											<select
-												class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
-												id="subject" name="subject">
-												<option>General Inquiry</option>
-												<option>Booking Request</option>
-												<option>Feedback</option>
-											</select>
-										</div>
-									</div>
-									<div>
-										<label class="block text-sm font-medium text-text-main"
-											for="message">Message</label>
-										<div class="mt-1">
-											<textarea
-												class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
-												id="message" name="message" rows="4"></textarea>
-										</div>
-									</div>
-									<div>
 										<button
-											class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
-											type="submit">Send Message</button>
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+											<span class="truncate">Book Now</span>
+										</button>
 									</div>
-								</form>
-							</div>
-							<!-- Right Column: Contact Details & Booking CTA -->
-							<div class="space-y-12">
-								<!-- Contact Information Card -->
-								<div>
-									<h2 class="text-2xl font-bold font-display text-text-main mb-4">Contact
-										Details</h2>
-									<div class="space-y-4">
+									<div
+										class="flex flex-1 flex-col gap-6 rounded-xl border-2 border-primary bg-white dark:bg-background-dark/50 p-6 shadow-lg relative overflow-hidden">
 										<div
-											class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
-											<div
-												class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
-												<span class="material-symbols-outlined text-text-main">mail</span>
-											</div>
+											class="absolute top-0 right-0 px-4 py-1 bg-accent text-text-light text-xs font-bold uppercase tracking-wider rounded-bl-lg">Popular</div>
+										<div class="flex flex-col gap-2">
+											<h3
+												class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Monthly
+												Coaching</h3>
 											<p
-												class="text-text-main text-base font-medium flex-1 truncate">hello@nutritionist.com</p>
+												class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
+												<span
+													class="text-4xl font-black leading-tight tracking-tight">$300</span>
+												<span class="text-base font-medium">per month</span>
+											</p>
+											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Ongoing
+												support and accountability to help you stay on track and
+												achieve lasting results.</p>
 										</div>
-										<div
-											class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+										<div class="flex flex-col gap-3 mt-auto">
 											<div
-												class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
-												<span class="material-symbols-outlined text-text-main">phone</span>
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Ongoing support</span>
 											</div>
+											<div
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Weekly check-ins</span>
+											</div>
+											<div
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Custom meal plans</span>
+											</div>
+										</div>
+										<button
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+											<span class="truncate">Learn More</span>
+										</button>
+									</div>
+									<div
+										class="flex flex-1 flex-col gap-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 shadow-sm hover:shadow-lg transition-shadow">
+										<div class="flex flex-col gap-2">
+											<h3
+												class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Group
+												Program</h3>
 											<p
-												class="text-text-main text-base font-medium flex-1 truncate">+1
-												(234) 567-890</p>
+												class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
+												<span
+													class="text-4xl font-black leading-tight tracking-tight">$250</span>
+												<span class="text-base font-medium">per program</span>
+											</p>
+											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Join
+												a supportive community on a collaborative wellness journey.</p>
 										</div>
-										<!-- Social Media Links (Optional) -->
-										<div
-											class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+										<div class="flex flex-col gap-3 mt-auto">
 											<div
-												class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
-												<span class="material-symbols-outlined text-text-main">group</span>
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Collaborative journey</span>
 											</div>
-											<div class="flex space-x-4">
-												<a
-													class="text-text-main/70 hover:text-primary transition-colors"
-													href="#"> <svg aria-hidden="true" class="h-6 w-6"
-														fill="currentColor" viewbox="0 0 24 24">
-												<path clip-rule="evenodd"
-															d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-															fill-rule="evenodd"></path></svg>
-												</a> <a
-													class="text-text-main/70 hover:text-primary transition-colors"
-													href="#"> <svg aria-hidden="true" class="h-6 w-6"
-														fill="currentColor" viewbox="0 0 24 24">
-												<path
-															d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
-												</a> <a
-													class="text-text-main/70 hover:text-primary transition-colors"
-													href="#"> <svg aria-hidden="true" class="h-6 w-6"
-														fill="currentColor" viewbox="0 0 24 24">
-												<path clip-rule="evenodd"
-															d="M12 2C6.477 2 2 6.477 2 12.001c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.001C22 6.477 17.523 2 12 2z"
-															fill-rule="evenodd"></path></svg>
-												</a>
+											<div
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Peer support group</span>
+											</div>
+											<div
+												class="flex items-center gap-3 text-sm text-text-light dark:text-text-dark">
+												<span class="material-symbols-outlined text-accent">check_circle</span>
+												<span>Weekly workshops</span>
 											</div>
 										</div>
+										<button
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+											<span class="truncate">Join Program</span>
+										</button>
 									</div>
 								</div>
-								<!-- Booking CTA -->
-								<div class="bg-primary/20 p-8 rounded-xl text-center">
-									<h2 class="text-2xl font-bold font-display text-text-main mb-3">Ready
-										to Book a Session?</h2>
-									<p class="text-text-main/80 mb-6">Take the first step
-										towards a healthier you. A personalized consultation will
-										provide you with the clarity and plan you need to succeed.</p>
-									<a
-										class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary/90 transition-colors"
-										href="#">Book a Session Now</a>
+							</div>
+						</div>
+						<div class="px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+							<div class="max-w-3xl mx-auto">
+								<h2
+									class="text-center font-display text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-text-light dark:text-text-dark">Frequently
+									Asked Questions</h2>
+								<div class="mt-8 flex flex-col">
+									<details
+										class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group"
+										open="">
+										<summary
+											class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+											<p
+												class="text-lg font-medium text-text-light dark:text-text-dark">Do
+												you offer payment plans?</p>
+											<span
+												class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70 group-open:rotate-180 transition-transform">expand_more</span>
+										</summary>
+										<p
+											class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
+											Yes, I offer flexible payment plans to make my services
+											accessible to everyone. Please contact me to discuss the
+											options available.</p>
+									</details>
+									<details
+										class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group">
+										<summary
+											class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+											<p
+												class="text-lg font-medium text-text-light dark:text-text-dark">What
+												is your cancellation policy?</p>
+											<span
+												class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70 group-open:rotate-180 transition-transform">expand_more</span>
+										</summary>
+										<p
+											class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
+											Cancellations made at least 24 hours in advance will receive
+											a full refund. Cancellations within 24 hours of the
+											appointment are non-refundable.</p>
+									</details>
+									<details
+										class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group">
+										<summary
+											class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+											<p
+												class="text-lg font-medium text-text-light dark:text-text-dark">How
+												do I know which service is right for me?</p>
+											<span
+												class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70 group-open:rotate-180 transition-transform">expand_more</span>
+										</summary>
+										<p
+											class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
+											The best way to determine the right fit is to book a free
+											15-minute discovery call. We can discuss your goals and I can
+											recommend the service that will best support your journey.</p>
+									</details>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="stories" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+					<div class="py-16 sm:py-24">
+						<div class="max-w-5xl mx-auto">
+							<div class="text-center mb-12">
+								<h1
+									class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-text-light dark:text-text-dark">Real
+									People, Real Results</h1>
+								<p
+									class="mt-4 text-text-main/80 text-lg md:text-xl font-normal leading-normal max-w-2xl mx-auto">Hear
+									from our happy clients and their transformational journeys
+									towards a healthier, more vibrant life.</p>
+							</div>
+							<div
+								class="flex justify-center gap-2 md:gap-3 p-3 mb-12 overflow-x-auto">
+								<div
+									class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 cursor-pointer px-4">
+									<p class="text-primary text-sm font-medium leading-normal">All</p>
+								</div>
+								<div
+									class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
+									<p class="text-text-main text-sm font-medium leading-normal">Weight
+										Loss</p>
+								</div>
+								<div
+									class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
+									<p class="text-text-main text-sm font-medium leading-normal">Energy
+										Boost</p>
+								</div>
+								<div
+									class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
+									<p class="text-text-main text-sm font-medium leading-normal">Wellness</p>
+								</div>
+								<div
+									class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light border border-gray-200 cursor-pointer px-4 hover:bg-gray-100 transition-colors">
+									<p class="text-text-main text-sm font-medium leading-normal">Digestive
+										Health</p>
+								</div>
+							</div>
+							<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+								<div
+									class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
+									<div class="relative">
+										<img class="w-full h-56 object-cover"
+											data-alt="A smiling woman with blonde hair"
+											src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-PffS1nbkgwjH1dzfKVj1Z0s4omdEnPD56r20jvFmhMNvv6ktUeWdQ1OfflcROv2ReX8LPYcBNMMhHqZTgPdUu68FYxHBdspgia3bUCYRwcveAYRWp4d5H5QnsW5fPQegDzn-y1X3UMQ-KTlhvkmQR-8jJtMXd9oCrMUbQMrg9DK-vRcldgF4puWf19SeKgCD8TuVKfVWTslxbywKLz8Oy4AV23l0qVXu8_FBfTUfNsi1lvSwM4ZzGajU6ayH3T8LOn1HNgCWloWZ" />
+										<div
+											class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+										<div class="absolute bottom-0 left-0 p-6">
+											<p
+												class="text-white text-xl font-bold leading-tight line-clamp-3">"I
+												feel like a new person, full of energy and confidence!"</p>
+										</div>
+									</div>
+									<div class="p-6">
+										<p class="text-text-main font-bold text-lg">Sarah L.</p>
+										<p class="text-text-main/70 mt-2 text-sm">"I struggled
+											with low energy for years. Now, I wake up refreshed and ready
+											for the day. This program changed my life."</p>
+									</div>
+								</div>
+								<div
+									class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
+									<div class="relative">
+										<img class="w-full h-56 object-cover"
+											data-alt="A man with a beard smiling"
+											src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEgvZes8DEAW1y0nG3-NxtCvYFWGS_7AI-aYPkj8KKKIdzfE8-watvysU_tIjk7adX6oA-Ifg5ojs2416fiUWfnt196NzrFR40nFe4Wqd86AYHJ6mPRh7aWf-KQEmplbXtnki1dyKPXxUDZACCA1Ko6OxB5_f4h3bdiwh97qIeVXuTBQFBgReS-wevSOSzBqa4PF9yPUWeG6CNp3IsB4nWs8wSpjP48trpNtfOwCjWdPD-iKFewgcRqVMxO4l7R9XKGXycwS12-fEI" />
+										<div
+											class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+										<div class="absolute bottom-0 left-0 p-6">
+											<p
+												class="text-white text-xl font-bold leading-tight line-clamp-3">"Finally,
+												a sustainable plan that actually works for my busy
+												schedule."</p>
+										</div>
+									</div>
+									<div class="p-6">
+										<p class="text-text-main font-bold text-lg">Michael B.</p>
+										<p class="text-text-main/70 mt-2 text-sm">"I've tried
+											every diet out there. This was different. It's about building
+											healthy habits, not restrictions. I've lost 20 pounds and
+											feel amazing."</p>
+									</div>
+								</div>
+								<div
+									class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
+									<div class="relative">
+										<img class="w-full h-56 object-cover"
+											data-alt="A woman with curly hair outdoors"
+											src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLtI7S7-p4Zm2_giraGJQiTlhAGmD15WQczBpIBns0QazqWOHoptboIyYiboqesEdHMwJeLSQE3VURO7a3i0RXtE65URS5PSdlFwxNplKv8yjomEER7ZBJ5j3UhN2K-qh59HngHFUBNRxyJNa61vma9oHL6uhp3NH6WiMCkgsn6R9Chn1uoHDe8KmI7lMvh7iU8qHuxEtIZnvgPqjO7LQ_QEYJKYjn3fPrSiBU2L4SWRuCJMULB3LLxU1nIv_zYk7TBH7ae39xu4gU" />
+										<div
+											class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+										<div class="absolute bottom-0 left-0 p-6">
+											<p
+												class="text-white text-xl font-bold leading-tight line-clamp-3">"I
+												learned so much about my body and how to fuel it properly."</p>
+										</div>
+									</div>
+									<div class="p-6">
+										<p class="text-text-main font-bold text-lg">Jessica P.</p>
+										<p class="text-text-main/70 mt-2 text-sm">"The
+											personalized advice was a game-changer. I no longer feel
+											bloated after meals, and my skin has never looked better."</p>
+									</div>
+								</div>
+								<div
+									class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
+									<div class="relative">
+										<img class="w-full h-56 object-cover"
+											data-alt="A smiling man with short hair"
+											src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKS0RNCzy7T2EGQV0WiELt2FTodMbr0eNTBu3Xn0aaIkiYndz6meEBuoWJvauY8O26t9_bf-Jzi72Z6KM6upUoWtlSU9mhAhqmdt0172kX35qiYsmRub38aZ3-BROFfJfbPUtSywn6ccxKd54AFEJz-buBWnI7K_kTiVw_TatMW5FGsKybHMRPSIC2KNU51wnQUoIqVMLGIRRc08gVWzrRAjEss34EvxifNUhUNHFqY7ieVRv4eahnel85Xgr7egX2bXn8MujEF7nq" />
+										<div
+											class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+										<div class="absolute bottom-0 left-0 p-6">
+											<p
+												class="text-white text-xl font-bold leading-tight line-clamp-3">"More
+												energy than I've had in years. It's incredible."</p>
+										</div>
+									</div>
+									<div class="p-6">
+										<p class="text-text-main font-bold text-lg">David R.</p>
+										<p class="text-text-main/70 mt-2 text-sm">"I was skeptical
+											at first, but the results speak for themselves. I'm more
+											productive at work and have the energy to play with my kids."</p>
+									</div>
+								</div>
+								<div
+									class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
+									<div class="relative">
+										<img class="w-full h-56 object-cover"
+											data-alt="A woman with dark hair smiling warmly"
+											src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLgISZJSmSkbF856O7IZdJqb2k59eva4AI-paDg89KRJ9sdgG5B9pYWCGVq8gTOpDUfkWmurVz1XrI8wkSEozcl8sLErwBFyAW1SoiEDoY0CCu2maCAMV6qXGfaQmNeDAME2ndI3mQ7GCSfI1i62Zl314vxGkdyiy55cfsQToftVpTw-uY4ZOJ6kwBAYWziwa9F7KJd3b4VvPZ-kBIP8i2CixhKL5_lLw8pxhPpBS8phZhiBaDO2uVKrnfhdPM9abMA4ecSSO11V68" />
+										<div
+											class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+										<div class="absolute bottom-0 left-0 p-6">
+											<p
+												class="text-white text-xl font-bold leading-tight line-clamp-3">"The
+												best investment I've ever made in my health and well-being."</p>
+										</div>
+									</div>
+									<div class="p-6">
+										<p class="text-text-main font-bold text-lg">Emily T.</p>
+										<p class="text-text-main/70 mt-2 text-sm">"This isn't just
+											about food; it's about a total mindset shift. I feel
+											empowered and in control of my health for the first time."</p>
+									</div>
+								</div>
+								<div
+									class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
+									<div class="relative">
+										<img class="w-full h-56 object-cover"
+											data-alt="A pensive man looking to the side"
+											src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmCqn4p717WJo9XMZBFY5uGXlBqQZosC1l4sf9KXhCNvu_WtekAKUlcoUtgbQ8gaEHOqN8gZwIcvLdRxktJyU0wXQJH-IKKtkiNXTOi15webH9XvM64SDxAWnntDyxz0DT-8yY87djUswBjK4eG2VjeMkiPriXL5Iy6UhZFTaCNtgFkzwFFIjZ5JpS8rCxZg4bfTRuCNNVWRv3EM_YMkdhnjsC3xVdVRD2fy3CAvP5ChGgRL7xUspd8lOKWxcMnunV6SpvnetzFpJA" />
+										<div
+											class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+										<div class="absolute bottom-0 left-0 p-6">
+											<p
+												class="text-white text-xl font-bold leading-tight line-clamp-3">"My
+												confidence is through the roof. I finally feel comfortable
+												in my own skin."</p>
+										</div>
+									</div>
+									<div class="p-6">
+										<p class="text-text-main font-bold text-lg">Chris J.</p>
+										<p class="text-text-main/70 mt-2 text-sm">"The support and
+											guidance were phenomenal. I never felt alone in my journey,
+											and the results have been life-changing."</p>
+									</div>
+								</div>
+							</div>
+							<div class="flex justify-center mt-16">
+								<button
+									class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-transform transform hover:scale-105">
+									<span class="truncate">Start Your Transformation</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="contact" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+					<div class="py-16 sm:py-24">
+						<div class="max-w-4xl mx-auto">
+							<!-- Hero Section -->
+							<div class="text-center mb-12 md:mb-16">
+								<h1
+									class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-text-light dark:text-text-dark">Ready
+									to Start Your Wellness Journey?</h1>
+								<p
+									class="mt-4 text-text-main/80 text-lg md:text-xl font-normal leading-normal max-w-2xl mx-auto">I'm
+									here to help you achieve your health goals. Reach out to
+									schedule a consultation or ask any questions you may have.</p>
+							</div>
+							<div class="space-y-12 md:space-y-16">
+								<!-- Left Column: Contact Form -->
+								<!-- <div class="bg-white p-8 rounded-xl shadow-md">
+									<h2 class="text-2xl font-bold font-display text-text-main mb-6">Send
+										a Message</h2>
+									<form action="#" class="space-y-6" method="POST">
+										<div>
+											<label class="block text-sm font-medium text-text-main"
+												for="name">Name</label>
+											<div class="mt-1">
+												<input autocomplete="name"
+													class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
+													id="name" name="name" type="text" />
+											</div>
+										</div>
+										<div>
+											<label class="block text-sm font-medium text-text-main"
+												for="email">Email</label>
+											<div class="mt-1">
+												<input autocomplete="email"
+													class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
+													id="email" name="email" type="email" />
+											</div>
+										</div>
+										<div>
+											<label class="block text-sm font-medium text-text-main"
+												for="subject">Subject</label>
+											<div class="mt-1">
+												<select
+													class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
+													id="subject" name="subject">
+													<option>General Inquiry</option>
+													<option>Booking Request</option>
+													<option>Feedback</option>
+												</select>
+											</div>
+										</div>
+										<div>
+											<label class="block text-sm font-medium text-text-main"
+												for="message">Message</label>
+											<div class="mt-1">
+												<textarea
+													class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-background-light py-3 px-4"
+													id="message" name="message" rows="4"></textarea>
+											</div>
+										</div>
+										<div>
+											<button
+												class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
+												type="submit">Send Message</button>
+										</div>
+									</form>
+								</div> -->
+								<!-- Right Column: Contact Details & Booking CTA -->
+								<div class="space-y-12">
+									<!-- Contact Information Card -->
+									<div>
+										<h2
+											class="text-2xl font-bold font-display text-text-main mb-4">Contact
+											Details</h2>
+										<div class="space-y-4">
+											<div
+												class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+												<div
+													class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
+													<span class="material-symbols-outlined text-text-main">mail</span>
+												</div>
+												<p
+													class="text-text-main text-base font-medium flex-1 truncate">akhilesh.nikhal@nutritionist.com</p>
+											</div>
+											<div
+												class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+												<div
+													class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
+													<span class="material-symbols-outlined text-text-main">phone</span>
+												</div>
+												<p
+													class="text-text-main text-base font-medium flex-1 truncate">+91
+													9876543210</p>
+											</div>
+											<!-- Social Media Links (Optional) -->
+											<div
+												class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+												<div
+													class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
+													<span class="material-symbols-outlined text-text-main">group</span>
+												</div>
+												<div class="flex space-x-4">
+													<a
+														class="text-text-main/70 hover:text-primary transition-colors"
+														href="#"> <svg aria-hidden="true" class="h-6 w-6"
+															fill="currentColor" viewbox="0 0 24 24">
+												<path clip-rule="evenodd"
+																d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+																fill-rule="evenodd"></path></svg>
+													</a> <a
+														class="text-text-main/70 hover:text-primary transition-colors"
+														href="#"> <svg aria-hidden="true" class="h-6 w-6"
+															fill="currentColor" viewbox="0 0 24 24">
+												<path
+																d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+													</a> <a
+														class="text-text-main/70 hover:text-primary transition-colors"
+														href="#"> <svg aria-hidden="true" class="h-6 w-6"
+															fill="currentColor" viewbox="0 0 24 24">
+												<path clip-rule="evenodd"
+																d="M12 2C6.477 2 2 6.477 2 12.001c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.001C22 6.477 17.523 2 12 2z"
+																fill-rule="evenodd"></path></svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Booking CTA -->
+									<div class="bg-primary/20 p-8 rounded-xl text-center">
+										<h2
+											class="text-2xl font-bold font-display text-text-main mb-3">Ready
+											to Book a Session?</h2>
+										<p class="text-text-main/80 mb-6">Take the first step
+											towards a healthier you. A personalized consultation will
+											provide you with the clarity and plan you need to succeed.</p>
+										<a
+											class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary/90 transition-colors"
+											href="#">Book a Session Now</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div id="working">
-					<div class="py-16 md:py-24 px-4 md:px-10 lg:px-20">
-						<div class="max-w-4xl mx-auto">
-							<div class="text-center mb-12 md:mb-16">
+						<div class="py-16 md:py-24 px-4 md:px-10 lg:px-20">
+							<div class="max-w-4xl mx-auto">
+								<div class="text-center mb-12 md:mb-16">
 								<h1
 									class="font-display text-4xl md:text-5xl font-bold text-text-color tracking-tight leading-tight">Your
 									Path to a Healthier You</h1>
@@ -966,7 +1074,66 @@ h1, h2, h3, h4, h5, h6 {
 						</div>
 					</div>
 				</div>
+				<div id="consultation"
+					class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+					<div class="py-16 sm:py-24">
+						<div class="max-w-4xl mx-auto">
 
+							<div
+								class="layout-content-container flex w-full max-w-4xl flex-col gap-8">
+								<!-- Page Heading -->
+								<div class="flex flex-col gap-3 text-center">
+									<h1
+										class="font-display text-4xl md:text-5xl font-bold text-text-color tracking-tight leading-tight">Book
+										Your Consultation</h1>
+									<p
+										class="mx-auto max-w-2xl text-base leading-relaxed text-brand-charcoal/80">Welcome!
+										Please fill out the form below to schedule your discovery
+										call. I look forward to connecting with you and discussing
+										your wellness goals.</p>
+								</div>
+								<!-- BodyText -->
+								<p class="text-center text-sm text-brand-charcoal/60">Please
+									note: The form below is an interactive scheduling tool. It may
+									take a moment to load.</p>
+								<!-- Embedded Iframe for Google Form -->
+								<div
+									class="relative w-full overflow-hidden rounded-xl bg-brand-powder-blue/20"
+									style="min-height: 700px">
+									<!-- Loading Indicator -->
+									<div
+										class="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-brand-cream">
+										<div
+											class="h-8 w-8 animate-spin rounded-full border-4 border-brand-sage border-t-transparent"></div>
+										<p class="text-sm text-brand-charcoal/70">Loading
+											scheduling options...</p>
+									</div>
+									<iframe class="relative z-10 w-full" frameborder="0"
+										height="700" marginheight="0" marginwidth="0"
+										src="https://docs.google.com/forms/d/e/1FAIpQLScPThM9qpNXl2ixHP3BkTZaDzGiwD9ZnAQBsvd4-WPz0LEMEQ/viewform?embedded=true"
+										style="min-height: 700px" width="100%">Loading…</iframe>
+								</div>
+								<!-- Supporting Text/FAQ Section -->
+								<div
+									class="flex flex-col items-center gap-4 rounded-lg border border-brand-sage/20 bg-white p-6 text-center">
+									<p class="text-base text-brand-charcoal/80">Have questions
+										before booking? Check out the FAQ page for more information or
+										get in touch directly.</p>
+									<div class="flex flex-wrap justify-center gap-4">
+										<button
+											class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-brand-sage/10 text-brand-sage text-sm font-bold tracking-wide transition-colors hover:bg-brand-sage/20">
+											<span class="truncate">Read FAQs</span>
+										</button>
+										<button
+											class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-brand-sage text-brand-cream text-sm font-bold tracking-wide transition-colors hover:bg-opacity-90">
+											<span class="truncate">Contact Me</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</main>
 
 		</div>
