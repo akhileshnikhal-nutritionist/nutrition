@@ -65,6 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 		var hamburger = document.getElementById("iconToggle");
 		hamburger.name = 'close';
 		toggleMenu(hamburger);
+		
+		scrollToTop();
 	}
 	function showPhilosophy() {
 		document.getElementById("mainPage").style.display = "none";
@@ -77,6 +79,8 @@ h1, h2, h3, h4, h5, h6 {
 		
 		var hamburger = document.getElementById("iconToggle");
 		toggleMenu(hamburger);
+		
+		scrollToTop();
 	}
 	function showServices() {
 		document.getElementById("mainPage").style.display = "none";
@@ -89,6 +93,8 @@ h1, h2, h3, h4, h5, h6 {
 		
 		var hamburger = document.getElementById("iconToggle");
 		toggleMenu(hamburger);
+		
+		scrollToTop();
 	}
 	function showStories() {
 		document.getElementById("mainPage").style.display = "none";
@@ -101,6 +107,8 @@ h1, h2, h3, h4, h5, h6 {
 		
 		var hamburger = document.getElementById("iconToggle");
 		toggleMenu(hamburger);
+		
+		scrollToTop();
 	}
 	function showContact() {
 		document.getElementById("mainPage").style.display = "none";
@@ -113,6 +121,8 @@ h1, h2, h3, h4, h5, h6 {
 		
 		var hamburger = document.getElementById("iconToggle");
 		toggleMenu(hamburger);
+		
+		scrollToTop();
 	}
 	function showWorking() {
 		document.getElementById("mainPage").style.display = "none";
@@ -125,6 +135,8 @@ h1, h2, h3, h4, h5, h6 {
 		
 		var hamburger = document.getElementById("iconToggle");
 		toggleMenu(hamburger);
+		
+		scrollToTop();
 	}
 	
 	function showConsultation() {
@@ -138,6 +150,8 @@ h1, h2, h3, h4, h5, h6 {
 		
 		var hamburger = document.getElementById("iconToggle");
 		toggleMenu(hamburger);
+		
+		scrollToTop();
 	}
 	
 	function toggleMenu(hamburger) {
@@ -177,6 +191,14 @@ h1, h2, h3, h4, h5, h6 {
 	        navMenu.classList.remove('top-[-400px]', 'opacity-0', 'top-[80px]', 'opacity-100');
 	      }
 	    });
+	    
+	    function scrollToTop() {
+	    	  window.scrollTo({
+	    	    top: 0,
+	    	    left: 0,
+	    	    behavior: 'smooth'
+	    	  });
+	    	}
 </script>
 
 </head>
@@ -402,7 +424,7 @@ h1, h2, h3, h4, h5, h6 {
 					<section class="py-20 text-center">
 						<div class="container mx-auto px-6">
 							<button
-								class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-bold text-white shadow-lg transition-transform hover:scale-105">
+								onclick="showServices()" class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-bold text-white shadow-lg transition-transform hover:scale-105">
 								Explore My Services</button>
 						</div>
 					</section>
@@ -916,9 +938,10 @@ h1, h2, h3, h4, h5, h6 {
 										<p class="text-text-main/80 mb-6">Take the first step
 											towards a healthier you. A personalized consultation will
 											provide you with the clarity and plan you need to succeed.</p>
-										<a
-											class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary/90 transition-colors"
-											href="#">Book a Session Now</a>
+										<button
+										onclick="showConsultation()" class="flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-10 bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary/90 transition-colors transform hover:scale-105">
+										<span>Book a Session Now</span>
+									</button>
 									</div>
 								</div>
 							</div>
@@ -964,7 +987,7 @@ h1, h2, h3, h4, h5, h6 {
 												class="font-display text-xl font-bold text-text-color mb-2">In-Person
 												Sessions</h3>
 											<p class="text-text-color/80">Face-to-face consultations
-												for a more personal connection at our tranquil office space.</p>
+												for a more personal connection at your in your Home Kitchen across Pune, because being Healthy starts from your Kitchen</p>
 										</div>
 									</div>
 								</section>
@@ -985,7 +1008,7 @@ h1, h2, h3, h4, h5, h6 {
 												<h4 class="font-body font-bold text-text-color mb-1">Intake
 													Form</h4>
 												<p class="text-sm text-text-color/80">Complete a
-													comprehensive form about your health history and goals.</p>
+													comprehensive form about your health history, metrics and goals.</p>
 											</div>
 											<div class="flex flex-col items-center">
 												<div
@@ -995,8 +1018,8 @@ h1, h2, h3, h4, h5, h6 {
 												</div>
 												<h4 class="font-body font-bold text-text-color mb-1">Food
 													Diary</h4>
-												<p class="text-sm text-text-color/80">Keep a 3-day log
-													of your meals and drinks before our first session.</p>
+												<p class="text-sm text-text-color/80">Keep a log
+													of your recent meals and drinks before our first session.</p>
 											</div>
 											<div class="flex flex-col items-center">
 												<div
@@ -1030,7 +1053,7 @@ h1, h2, h3, h4, h5, h6 {
 													<h3 class="font-display text-xl font-bold text-text-color">Discovery
 														Call</h3>
 													<p class="text-text-color/80 mt-1">Book a free
-														15-minute call to see if we're a good fit.</p>
+														15-minute brief call to understand the process.</p>
 												</div>
 												<div class="hidden md:block w-1/2"></div>
 											</div>
@@ -1042,8 +1065,8 @@ h1, h2, h3, h4, h5, h6 {
 												<div class="pl-12 md:pl-12 md:w-1/2">
 													<h3 class="font-display text-xl font-bold text-text-color">Book
 														Sessions</h3>
-													<p class="text-text-color/80 mt-1">Easily schedule your
-														sessions through our online portal.</p>
+													<p class="text-text-color/80 mt-1">Schedule weekly
+														sessions for daily plans or special plans for festivals, travel etc. </p>
 												</div>
 											</div>
 											<!-- Step 3 -->
@@ -1054,7 +1077,7 @@ h1, h2, h3, h4, h5, h6 {
 													<h3 class="font-display text-xl font-bold text-text-color">Ongoing
 														Support</h3>
 													<p class="text-text-color/80 mt-1">Receive support via
-														email or our private messaging app between sessions.</p>
+														private messaging app between sessions.</p>
 												</div>
 												<div class="hidden md:block w-1/2"></div>
 											</div>
@@ -1064,8 +1087,8 @@ h1, h2, h3, h4, h5, h6 {
 								<!-- CTA -->
 								<div class="text-center pt-12">
 									<button
-										class="flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-10 bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary/90 transition-colors transform hover:scale-105">
-										<span>Ready to Begin? Book Your Free Discovery Call</span>
+										onclick="showConsultation()" class="flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-10 bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary/90 transition-colors transform hover:scale-105">
+										<span>Ready to Begin? Book Your consultation now</span>
 									</button>
 								</div>
 							</div>
@@ -1107,9 +1130,9 @@ h1, h2, h3, h4, h5, h6 {
 											scheduling options...</p>
 									</div>
 									<iframe class="relative z-10 w-full" frameborder="0"
-										height="700" marginheight="0" marginwidth="0"
+										height="1100" marginheight="0" marginwidth="0"
 										src="https://docs.google.com/forms/d/e/1FAIpQLScPThM9qpNXl2ixHP3BkTZaDzGiwD9ZnAQBsvd4-WPz0LEMEQ/viewform?embedded=true"
-										style="min-height: 700px" width="100%">Loading…</iframe>
+										style="min-height: 1100px" width="100%">Loading…</iframe>
 								</div>
 								<!-- Supporting Text/FAQ Section -->
 								<div
