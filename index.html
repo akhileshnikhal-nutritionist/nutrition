@@ -53,6 +53,21 @@ h1, h2, h3, h4, h5, h6 {
 		},
 	}
 
+	function showHomePageOnLoad() {
+		document.getElementById("mainPage").style.display = "block";
+		document.getElementById("philosophy").style.display = "none";
+		document.getElementById("services").style.display = "none";
+		document.getElementById("stories").style.display = "none";
+		document.getElementById("contact").style.display = "none";
+		document.getElementById("working").style.display = "none";
+		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		hamburger.name = 'menu';
+		//toggleMenu(hamburger);
+		
+		scrollToTop();
+	}
 	function showMainPage() {
 		document.getElementById("mainPage").style.display = "block";
 		document.getElementById("philosophy").style.display = "none";
@@ -202,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
 </script>
 
 </head>
-<body onload="showMainPage()"
+<body onload="showHomePageOnLoad()"
 	class="bg-background-light dark:bg-background-dark font-display text-text-charcoal dark:text-background-light">
 	<div
 		class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
