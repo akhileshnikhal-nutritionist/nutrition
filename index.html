@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "none";
 		
 		var hamburger = document.getElementById("iconToggle");
@@ -75,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "none";
 		
 		var hamburger = document.getElementById("iconToggle");
@@ -90,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "none";
 		
 		var hamburger = document.getElementById("iconToggle");
@@ -105,6 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "none";
 		
 		var hamburger = document.getElementById("iconToggle");
@@ -120,6 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "block";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "none";
 		
 		var hamburger = document.getElementById("iconToggle");
@@ -135,6 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "block";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "none";
 		
 		var hamburger = document.getElementById("iconToggle");
@@ -150,7 +156,26 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "block";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "none";
+		
+		var hamburger = document.getElementById("iconToggle");
+		hamburger.name = 'close';
+		toggleMenu(hamburger);
+		
+		scrollToTop();
+	}
+	
+	function showAboutMe() {
+		document.getElementById("mainPage").style.display = "none";
+		document.getElementById("philosophy").style.display = "none";
+		document.getElementById("services").style.display = "none";
+		document.getElementById("stories").style.display = "none";
+		document.getElementById("contact").style.display = "none";
+		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "block";
+		document.getElementById("consultation").style.display = "none";
+		
 		
 		var hamburger = document.getElementById("iconToggle");
 		hamburger.name = 'close';
@@ -166,6 +191,7 @@ h1, h2, h3, h4, h5, h6 {
 		document.getElementById("stories").style.display = "none";
 		document.getElementById("contact").style.display = "none";
 		document.getElementById("working").style.display = "none";
+		document.getElementById("aboutMe").style.display = "none";
 		document.getElementById("consultation").style.display = "block";
 		
 		var hamburger = document.getElementById("iconToggle");
@@ -276,6 +302,9 @@ h1, h2, h3, h4, h5, h6 {
 										class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
 										onclick="showWorking()">How it Works</button></li>
 								<li class="mx-4 my-6 md:my-0"><button
+										class="text-text-charcoal dark:text-background-light text-sm font-medium leading-normal hover:text-primary transition-colors"
+										onclick="showAboutMe()">About Me</button></li>
+								<li class="mx-4 my-6 md:my-0"><button
 										onclick="showConsultation()"
 										class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
 										<span class="truncate">Book a Consultation</span>
@@ -326,43 +355,51 @@ h1, h2, h3, h4, h5, h6 {
 								class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm border border-primary/20 hover:shadow-lg transition-shadow">
 								<div
 									class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-secondary/30">
-									<img src="K11.jpg"></img></div>
+									<img src="K11.jpg"></img>
+								</div>
 								<div>
 									<h3
-										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Certified Performance
-										Nutritionist</h3>
+										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Certified
+										Performance Nutritionist</h3>
 									<p
-										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">K11 School of Fitness Sciences</p>
+										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">K11
+										School of Fitness Sciences</p>
+								</div>
+							</div>
+							<div
+								class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm border border-primary/20 hover:shadow-lg transition-shadow">
+								<div
+									class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-secondary/30">
+									<img src="Collage.jpg"></img>
+								</div>
+								<div>
+									<h3
+										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Self
+										Journey of being Healthy</h3>
+									<p
+										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">Lost
+										30Kgs after being obese for life</p>
 								</div>
 							</div>
 							<div
 								class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm border border-primary/20 hover:shadow-lg transition-shadow">
 								<div
 									class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-secondary/30"
-									><img src="Collage.jpg"></img></div>
-								<div>
-									<h3
-										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Self Journey of being Healthy</h3>
-									<p
-										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">Lost 30Kgs after being obese for life</p>
+									data-alt="abstract pattern for award">
+									<img src="Collage_all.jpg"></img>
 								</div>
-							</div>
-							<div
-								class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark/50 rounded-xl shadow-sm border border-primary/20 hover:shadow-lg transition-shadow">
-								<div
-									class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-secondary/30"
-									data-alt="abstract pattern for award"></div>
 								<div>
 									<h3
-										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Experience in satisfying diverse clients</h3>
+										class="text-text-charcoal dark:text-background-light text-xl font-bold leading-normal font-serif">Happy and Satisfied clients</h3>
 									<p
-										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">Personalized approach for each client for getting results</p>
+										class="text-text-charcoal/70 dark:text-background-light/70 text-sm font-normal leading-normal mt-1">Personalized
+										result oriented approach</p>
 								</div>
 							</div>
 						</div>
 						<div class="flex px-4 py-12 justify-center">
-							<button
-								onclick="showServices()" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+							<button onclick="showServices()"
+								class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
 								<span class="truncate">Get Started</span>
 							</button>
 						</div>
@@ -442,8 +479,8 @@ h1, h2, h3, h4, h5, h6 {
 					</section>
 					<section class="py-20 text-center">
 						<div class="container mx-auto px-6">
-							<button
-								onclick="showServices()" class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-bold text-white shadow-lg transition-transform hover:scale-105">
+							<button onclick="showServices()"
+								class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-bold text-white shadow-lg transition-transform hover:scale-105">
 								Explore My Services</button>
 						</div>
 					</section>
@@ -500,8 +537,8 @@ h1, h2, h3, h4, h5, h6 {
 												<span>Personalized goal setting</span>
 											</div>
 										</div>
-										<button
-											onclick="showConsultation()" class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+										<button onclick="showConsultation()"
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
 											<span class="truncate">Book Now</span>
 										</button>
 									</div>
@@ -540,8 +577,8 @@ h1, h2, h3, h4, h5, h6 {
 												<span>Custom meal plans</span>
 											</div>
 										</div>
-										<button
-											onclick="showConsultation()" class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+										<button onclick="showConsultation()"
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
 											<span class="truncate">Book Now</span>
 										</button>
 									</div>
@@ -549,16 +586,18 @@ h1, h2, h3, h4, h5, h6 {
 										class="flex flex-1 flex-col gap-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 shadow-sm hover:shadow-lg transition-shadow">
 										<div class="flex flex-col gap-2">
 											<h3
-												class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Family Education 
-												Program</h3>
+												class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Family
+												Education Program</h3>
 											<p
 												class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
 												<span
 													class="text-4xl font-black leading-tight tracking-tight">₹4999</span>
 												<span class="text-base font-medium">per program</span>
 											</p>
-											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Get your family together including
-											your children and get your nutrition and habits corrected with questions to all you doubts and queries.</p>
+											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Get
+												your family together including your children and get your
+												nutrition and habits corrected with questions to all you
+												doubts and queries.</p>
 										</div>
 										<div class="flex flex-col gap-3 mt-auto">
 											<div
@@ -577,8 +616,8 @@ h1, h2, h3, h4, h5, h6 {
 												<span>Weekly connect</span>
 											</div>
 										</div>
-										<button
-											onclick="showConsultation()" class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+										<button onclick="showConsultation()"
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
 											<span class="truncate">Book Now</span>
 										</button>
 									</div>
@@ -594,8 +633,9 @@ h1, h2, h3, h4, h5, h6 {
 													class="text-4xl font-black leading-tight tracking-tight">₹7999</span>
 												<span class="text-base font-medium">per program</span>
 											</p>
-											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Special Program designed for corporates
-											who work on computer screen day in and out and has a busy lifestyle.</p>
+											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Special
+												Program designed for corporates who work on computer screen
+												day in and out and has a busy lifestyle.</p>
 										</div>
 										<div class="flex flex-col gap-3 mt-auto">
 											<div
@@ -614,8 +654,8 @@ h1, h2, h3, h4, h5, h6 {
 												<span>Lifestyle changing process</span>
 											</div>
 										</div>
-										<button
-											onclick="showConsultation()" class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+										<button onclick="showConsultation()"
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
 											<span class="truncate">Book Now</span>
 										</button>
 									</div>
@@ -623,16 +663,17 @@ h1, h2, h3, h4, h5, h6 {
 										class="flex flex-1 flex-col gap-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-6 shadow-sm hover:shadow-lg transition-shadow">
 										<div class="flex flex-col gap-2">
 											<h3
-												class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Doubts clearing
-												Session</h3>
+												class="text-2xl font-display font-bold leading-tight text-text-light dark:text-text-dark">Doubts
+												clearing Session</h3>
 											<p
 												class="flex items-baseline gap-2 text-text-light dark:text-text-dark">
 												<span
 													class="text-4xl font-black leading-tight tracking-tight">₹999</span>
 												<span class="text-base font-medium">per program</span>
 											</p>
-											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Special Session designed for
-											anyone who wants to get their doubts cleared or has confusion on current diets, food products.</p>
+											<p class="text-sm text-text-light/80 dark:text-text-dark/80">Special
+												Session designed for anyone who wants to get their doubts
+												cleared or has confusion on current diets, food products.</p>
 										</div>
 										<div class="flex flex-col gap-3 mt-auto">
 											<div
@@ -651,8 +692,8 @@ h1, h2, h3, h4, h5, h6 {
 												<span>Lies floating around social media</span>
 											</div>
 										</div>
-										<button
-											onclick="showConsultation()" class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+										<button onclick="showConsultation()"
+											class="mt-6 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
 											<span class="truncate">Book Now</span>
 										</button>
 									</div>
@@ -678,24 +719,25 @@ h1, h2, h3, h4, h5, h6 {
 										</summary>
 										<p
 											class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
-											Yes, weight loss plans are included according to your convenience.
-											But thing to note is that weight(fat) loss is a by-product of
-											lifestyle and nutrition getting corrected.</p>
+											Yes, weight loss plans are included according to your
+											convenience. But thing to note is that weight(fat) loss is a
+											by-product of lifestyle and nutrition getting corrected.</p>
 									</details>
 									<details
 										class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group">
 										<summary
 											class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
 											<p
-												class="text-lg font-medium text-text-light dark:text-text-dark">Can a session be arranged
-												for clearing only questions/queries/misconceptions related to nutrition ?</p>
+												class="text-lg font-medium text-text-light dark:text-text-dark">Can
+												a session be arranged for clearing only
+												questions/queries/misconceptions related to nutrition ?</p>
 											<span
 												class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70 group-open:rotate-180 transition-transform">expand_more</span>
 										</summary>
 										<p
 											class="text-text-light/80 dark:text-text-dark/80 text-base leading-relaxed pb-2">
-											Yes, session can be arranged to answer all your queries the science based way
-											with understanding the biological processes</p>
+											Yes, session can be arranged to answer all your queries the
+											science based way with understanding the biological processes</p>
 									</details>
 									<details
 										class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-4 group">
@@ -967,6 +1009,71 @@ h1, h2, h3, h4, h5, h6 {
 									<!-- Contact Information Card -->
 									<div>
 										<h2
+											class="text-2xl font-bold font-display text-text-main mb-4">Social
+											Media</h2>
+										<div class="space-y-4">
+											<div
+												class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+												<div
+													class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
+													<a
+														class="text-text-main/70 hover:text-primary transition-colors"
+														href="#"> <svg class="h-6 w-6" fill="currentColor"
+															viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"></path></svg>
+													</a>
+												</div>
+												<p
+													class="text-text-main text-base font-medium flex-1 truncate">
+													<a href="https://www.youtube.com/@AkhileshNikhalOfficial"
+														target="_blank">@AkhileshNikhalOfficial</a>
+												</p>
+											</div>
+											<div
+												class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+												<div
+													class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
+													<a
+														class="text-text-main/70 hover:text-primary transition-colors"
+														href="#"> <svg class="h-6 w-6" fill="currentColor"
+															viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.74 0 8.333.011 7.053.069 2.59.285.285 2.59.069 7.053.011 8.333 0 8.74 0 12s.011 3.667.069 4.947c.216 4.457 2.522 6.758 7.014 6.972 1.258.056 1.65.069 4.917.069s3.659-.013 4.917-.069c4.492-.213 6.798-2.515 7.014-6.972.056-1.28.069-1.679.069-4.947s-.013-3.667-.069-4.947C21.715 2.59 19.414.285 14.947.069 13.667.011 13.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg>
+													</a>
+												</div>
+												<p
+													class="text-text-main text-base font-medium flex-1 truncate">
+													<a href="https://www.instagram.com/akhilesh.nikhal/"
+														target="_blank">akhilesh.nikhal</a>
+												</p>
+											</div>
+											<div
+												class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+												<div
+													class="flex items-center justify-center rounded-full bg-secondary shrink-0 size-10">
+													<a
+														class="text-text-main/70 hover:text-primary transition-colors"
+														href="#"> <svg aria-hidden="true" class="h-6 w-6"
+															fill="currentColor" viewbox="0 0 24 24">
+												<path clip-rule="evenodd"
+																d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+																fill-rule="evenodd"></path></svg>
+													</a>
+												</div>
+												<p
+													class="text-text-main text-base font-medium flex-1 truncate">
+													<a
+														href="https://www.facebook.com/profile.php?id=61582864840580"
+														target="_blank">Akhilesh Nikhal</a>
+												</p>
+											</div>
+
+										</div>
+									</div>
+
+									<!-- <div>
+										<h2
 											class="text-2xl font-bold font-display text-text-main mb-4">Contact
 											Details</h2>
 										<div class="space-y-4">
@@ -989,7 +1096,7 @@ h1, h2, h3, h4, h5, h6 {
 													class="text-text-main text-base font-medium flex-1 truncate">+91
 													9876543210</p>
 											</div>
-											<!-- Social Media Links (Optional) -->
+											Social Media Links (Optional)
 											<div
 												class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
 												<div
@@ -1021,19 +1128,19 @@ h1, h2, h3, h4, h5, h6 {
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 									<!-- Booking CTA -->
 									<div class="bg-primary/20 p-8 rounded-xl text-center">
 										<h2
-											class="text-2xl font-bold font-display text-text-main mb-3">Ready
-											to Book a Session?</h2>
-										<p class="text-text-main/80 mb-6">Take the first step
-											towards a healthier you. A personalized consultation will
-											provide you with the clarity and plan you need to succeed.</p>
-										<button
-										onclick="showConsultation()" class="flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-10 bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary/90 transition-colors transform hover:scale-105">
-										<span>Book a Session Now</span>
-									</button>
+											class="text-2xl font-bold font-display text-text-main mb-3">Want
+											to get in touch ?</h2>
+										<p class="text-text-main/80 mb-6">Its easy just fill out a
+											simple form by clicking the button below and we will surely
+											get back to you.</p>
+										<button onclick="showConsultation()"
+											class="flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-10 bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary/90 transition-colors transform hover:scale-105">
+											<span>Book a connect</span>
+										</button>
 									</div>
 								</div>
 							</div>
@@ -1041,9 +1148,9 @@ h1, h2, h3, h4, h5, h6 {
 					</div>
 				</div>
 				<div id="working">
-						<div class="py-16 md:py-24 px-4 md:px-10 lg:px-20">
-							<div class="max-w-4xl mx-auto">
-								<div class="text-center mb-12 md:mb-16">
+					<div class="py-16 md:py-24 px-4 md:px-10 lg:px-20">
+						<div class="max-w-4xl mx-auto">
+							<div class="text-center mb-12 md:mb-16">
 								<h1
 									class="font-display text-4xl md:text-5xl font-bold text-text-color tracking-tight leading-tight">Your
 									Path to a Healthier You</h1>
@@ -1079,7 +1186,8 @@ h1, h2, h3, h4, h5, h6 {
 												class="font-display text-xl font-bold text-text-color mb-2">In-Person
 												Sessions</h3>
 											<p class="text-text-color/80">Face-to-face consultations
-												for a more personal connection at your Home in your Kitchen across Pune, because being Healthy starts from your Kitchen</p>
+												for a more personal connection at your Home in your Kitchen
+												across Pune, because being Healthy starts from your Kitchen</p>
 										</div>
 									</div>
 								</section>
@@ -1100,7 +1208,8 @@ h1, h2, h3, h4, h5, h6 {
 												<h4 class="font-body font-bold text-text-color mb-1">Intake
 													Form</h4>
 												<p class="text-sm text-text-color/80">Complete a
-													comprehensive form about your health history, metrics and goals.</p>
+													comprehensive form about your health history, metrics and
+													goals.</p>
 											</div>
 											<div class="flex flex-col items-center">
 												<div
@@ -1110,8 +1219,8 @@ h1, h2, h3, h4, h5, h6 {
 												</div>
 												<h4 class="font-body font-bold text-text-color mb-1">Food
 													Diary</h4>
-												<p class="text-sm text-text-color/80">Keep a log
-													of your recent meals and drinks before our first session.</p>
+												<p class="text-sm text-text-color/80">Keep a log of your
+													recent meals and drinks before our first session.</p>
 											</div>
 											<div class="flex flex-col items-center">
 												<div
@@ -1158,7 +1267,8 @@ h1, h2, h3, h4, h5, h6 {
 													<h3 class="font-display text-xl font-bold text-text-color">Book
 														Sessions</h3>
 													<p class="text-text-color/80 mt-1">Schedule weekly
-														sessions for daily plans or special plans for festivals, travel etc. </p>
+														sessions for daily plans or special plans for festivals,
+														travel etc.</p>
 												</div>
 											</div>
 											<!-- Step 3 -->
@@ -1178,12 +1288,103 @@ h1, h2, h3, h4, h5, h6 {
 								</section>
 								<!-- CTA -->
 								<div class="text-center pt-12">
-									<button
-										onclick="showConsultation()" class="flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-10 bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary/90 transition-colors transform hover:scale-105">
+									<button onclick="showConsultation()"
+										class="flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-10 bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary/90 transition-colors transform hover:scale-105">
 										<span>Ready to Begin? Book Your consultation now</span>
 									</button>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div id="aboutMe">
+					<div class="container mx-auto max-w-4xl px-6 py-16 sm:py-24">
+						<div class="flex flex-col items-center gap-12 lg:gap-16">
+							<!-- Hero Section -->
+							<section
+								class="flex w-full flex-col items-center gap-8 text-center">
+								<img class="h-40 w-40 rounded-full object-cover shadow-lg"
+									data-alt="Warm and professional portrait of Jane Doe, a nutritionist and health coach."
+									src="pic_aboutme.jpg" />
+								<div class="flex flex-col gap-2">
+									<h1
+										class="font-display text-4xl font-bold text-text-body sm:text-5xl lg:text-6xl">My
+										Journey to a Healthier You</h1>
+									<p class="mx-auto max-w-2xl text-lg text-text-body/80">Guiding
+										busy adults towards sustainable, practical wellness solutions
+										with a personal touch.</p>
+								</div>
+							</section>
+							<!-- Personal Journey Section -->
+							<section class="w-full space-y-6">
+								<h2 class="font-display text-3xl font-bold text-text-body">The
+									"Why" Behind My Passion</h2>
+								<div
+									class="space-y-4 text-base leading-relaxed text-text-body/90">
+									<p>For years, I navigated the corporate world, believing
+										that "busy" was a badge of honor. Long hours and high stress
+										were my normal, and my health paid the price. I was constantly
+										fatigued, relying on caffeine to get through the day, and my
+										diet consisted of whatever was quick and convenient. It wasn't
+										until a health scare forced me to re-evaluate everything that
+										I discovered the transformative power of nutrition.</p>
+									<p>That personal crisis became my greatest teacher. It
+										ignited a passion within me to understand the profound
+										connection between food, mind, and body. I dove headfirst into
+										studying nutritional science, not just to heal myself, but to
+										equip others with the knowledge to reclaim their own health.
+										This isn't just a career for me; it's a calling born from my
+										own story of transformation.</p>
+								</div>
+							</section>
+							<!-- Professional Motto/Philosophy Section -->
+							<section class="w-full space-y-6">
+								<h2 class="font-display text-3xl font-bold text-text-body">My
+									Philosophy: Wellness Without the Overwhelm</h2>
+								<blockquote
+									class="relative border-l-4 border-secondary-accent bg-secondary-accent/20 p-6 italic text-text-body/90">
+									<p class="mb-2">"True health isn't about restriction or
+										perfection. It's about building sustainable habits that
+										nourish your body and fit seamlessly into your real life."</p>
+									<cite class="font-sans text-sm font-medium not-italic">-
+										Jane Doe</cite>
+								</blockquote>
+								<p class="text-base leading-relaxed text-text-body/90">I
+									believe in a balanced, evidence-based approach. We won't be
+									counting every calorie or eliminating entire food groups.
+									Instead, we'll work together to build a personalized plan that
+									honors your unique lifestyle, preferences, and goals. My focus
+									is on education and empowerment, giving you the tools to make
+									intuitive, informed choices that last a lifetime.</p>
+							</section>
+							<!-- Credentials Section -->
+							<section class="w-full space-y-6">
+								<h2 class="font-display text-3xl font-bold text-text-body">Credentials
+									&amp; Education</h2>
+								<ul class="list-disc space-y-2 pl-5 text-base text-text-body/90">
+									<li><strong>Certified Nutrition Specialist (CNS)</strong>
+										- Board for Certification of Nutrition Specialists</li>
+									<li><strong>M.S. in Human Nutrition</strong> - University
+										of Bridgeport</li>
+									<li><strong>Member of the American Nutrition
+											Association (ANA)</strong></li>
+								</ul>
+							</section>
+							<!-- CTA Section -->
+							<section
+								class="w-full rounded-xl bg-primary/20 p-8 text-center sm:p-12">
+								<div class="flex flex-col items-center gap-4">
+									<h3 class="font-display text-3xl font-bold text-text-body">Ready
+										to Start Your Journey?</h3>
+									<p class="max-w-xl text-text-body/80">Let's work together
+										to build a healthier, more vibrant you. Take the first step
+										today.</p>
+									<button onclick="showConsultation()"
+										class="mt-4 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary px-8 py-3.5 text-base font-bold text-white shadow-lg transition-transform hover:scale-105">
+										<span>Book a Free Consultation</span>
+									</button>
+								</div>
+							</section>
 						</div>
 					</div>
 				</div>
