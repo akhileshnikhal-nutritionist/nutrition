@@ -53,12 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 		},
 	}
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const divId = urlParams.get('scrollTo');
-    if (divId=='consultation') {
-        //const targetDiv = document.getElementById(divId);
-        showConsultation();
-    }
+
 	function showHomePageOnLoad() {
 		document.getElementById("mainPage").style.display = "block";
 		document.getElementById("philosophy").style.display = "none";
@@ -252,6 +247,13 @@ h1, h2, h3, h4, h5, h6 {
 	    	    behavior: 'smooth'
 	    	  });
 	    	}
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const divId = urlParams.get('scrollTo');
+    if (divId=='consultation') {
+        //const targetDiv = document.getElementById(divId);
+        showConsultation();
+    }
 </script>
 
 </head>
